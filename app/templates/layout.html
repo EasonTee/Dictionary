@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+		{% if title %}
+		<title>Dictionary-{{ title }}</title>
+	    {% else %}
+		<title>Dictionary</title>
+		{% endif %}
+	</head>
+	<body>
+	<h1> Dictionary </h1>
+<div class="content-section">
+
+<form method="POST" action=" " id="dict">
+
+  <fieldset class = "form-group">
+  <legend>Please insert a word</legend>
+
+  <div class="form-group">
+  <input type="text" id="a" name="word">
+  </div>
+  <div class="form-group">
+  <input type="submit" value="Submit">
+  </div>
+  </fieldset>
+
+</form>
+
+<p> {{text}} </p>
+
+<output form="dict" name="meaning" for="a">
+<legend>Meaning:</legend>
+{%for idx, display in enumerate output%}
+{{idx,display}}	
+{%endfor%}
+</output>
+
+</div>
+	</body>
+	</html>
