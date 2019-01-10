@@ -38,8 +38,8 @@
 
 <output form="dict" name="meaning" for="a">
 <legend>Meaning:</legend>
-{%for idx, display in enumerate output%}
-{{idx,display}}	
+{%for output in output%}
+{{output}}	
 {%endfor%}
 </output>
 
