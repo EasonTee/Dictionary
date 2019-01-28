@@ -1,0 +1,43 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="content-section">
+
+<h4>Sorry, we could not find <i><u>{{word}}</u></i>, but our app is able to make suggestions!</h4>
+<h4>Do you mean these? Please select.</h4>
+
+<form action=" " class="form-group" method='POST'>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" name="suggest" value={{output[0]}} id='radio_check1' 
+  onclick="check()"/> 
+  <label class = "custom-control-label" for='radio_check1'>{{output[0]}} </label> <br/>
+</div>
+
+<div class="custom-control custom-radio">
+  <input class='custom-control-input' type="radio" name="suggest" value={{output[1]}} id='radio_check2' 
+  onclick="check()"/> 
+  <label class = "custom-control-label" for='radio_check2'>{{output[1]}} </label> <br/>
+ </div>
+
+<div class="custom-control custom-radio">
+  <input class='custom-control-input' type="radio" name="suggest" value={{output[2]}} id='radio_check3' 
+  onclick="check()"/>
+  <label class = "custom-control-label" for='radio_check3'>{{output[2]}} </label> <br/>
+</div>
+
+  <input class='btn btn-primary' type="submit" name="press_submit" id='choose' disabled='disabled'/>
+
+</form>
+</div>
+
+<h3>{{meaning}}</h3>
+
+		<ol>
+
+		{%for item in display%}
+		<li>{{item}}</li>
+		{% endfor %}
+		
+	    </ol>
+
+{% endblock content %}
