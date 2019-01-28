@@ -14,10 +14,30 @@
 		{% else %}
 		<title>Dictionary</title>
 		{% endif %}
+
+		<!--js for radio button in radio_button html -->
+		<script>
+		function check()
+		{
+		var ele = document.getElementsByName('suggest');
+		var flag=0;
+		for(var i=0;i<ele.length;i++)
+		{
+    		if(ele[i].checked)
+     		flag=1;
+   
+		} 
+			if(flag==1)
+		document.getElementById('choose').disabled=false;
+		}
+		</script>
+
 	</head>
 
 	<body>
-		<h1> Dictionary </h1>
+		<div class = "content-section custom-control">
+		<h1><a href="/">Dictionary</a></h1>
+		</div>
 		{% block content %}{% endblock %}
 		
 
